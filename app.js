@@ -35,6 +35,12 @@ app.engine('ejs', require('ejs').renderFile);
   app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
+  // app.get('/admin', function(req, res) {
+  //   res.render('admin.ejs', {
+  //     title: "Admin page. Allow rentr to approve listings."
+  //   });
+  // });
+
 //app.use(express.static('views'));
 
 // app.set('views', __dirname + '/views');

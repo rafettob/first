@@ -1,6 +1,6 @@
 var environment = {
 	uat: {
-		port: 3000
+		port: process.env.PORT || 3000
 	},
 	prod: {
 		port: process.env.PORT || 4000
