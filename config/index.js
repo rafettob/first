@@ -3,7 +3,7 @@ var environment = {
 		port: 3000
 	},
 	prod: {
-		port: 4000
+		port: process.env.PORT || 4000
 	}
 };
 
