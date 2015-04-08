@@ -15,10 +15,16 @@ app.engine('ejs', require('ejs').renderFile);
 
   app.get('/', function(req, res) {
     res.render('index.ejs', {
-      title: "The index page."
+      title: "Rentr."
     });
   });
   
+  app.get('/find', function(req, res) {
+    res.render('find.ejs', {
+      title: "Rentr - Find Your Apartment."
+    });
+  });
+
   app.get('/about', function(req, res) {
     res.render('about.ejs', {
       title: "About Rentr."
@@ -33,6 +39,7 @@ app.engine('ejs', require('ejs').renderFile);
 
   app.use('/public', express.static(__dirname + '/public'));
   app.use('/bower_components', express.static(__dirname + '/bower_components'));
+  app.use('/scripts', express.static(__dirname + '/scripts'));
 
 
   // app.get('/admin', function(req, res) {
