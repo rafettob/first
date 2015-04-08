@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<HTML lang="en" ng-app="invoice2">
+	<HEAD><% include header.ejs %></HEAD>
+	<body>
+		This is where you can search for an apartment.
+		<br><br>
+
+		<div ng-controller="ApartmentCtrl as aptCtrl" ng-init="aptSelected='Brownstone'">
+			{{Object.keys(aptCtrl.apartments)}}
+			{{fields(aptCtrl.apartments)}}
+
+			<select ng-model="aptSelected">
+				<option ng-repeat="apartment in aptCtrl.apartments">{{apartment.name}}</option>
+			</select>
+
+			<br><br>
+			Selected: {{aptCtrl.apartments[aptSelected].name}} <br>
+			Bedrooms: {{aptCtrl.apartments[aptSelected].bedrooms}} <br>
+			Rent: {{aptCtrl.apartments[aptSelected].rent}} <br>
+			Pets: {{aptCtrl.apartments[aptSelected].pets}} <br>
+
+			<br><br>
+			<img src="{{'public/images/' + aptCtrl.apartments[aptSelected].name + '.jpg'}}">
+		</div>
+	</body>
+
+<!--
+	<ul>
+		<li ng-repeat="apartment in aptCtrl.apartments">
+			<span>{{apartment.rent}}</span>
+		</li>
+	</ul>
+</div>
+
+<!--
+<div ng-controller="PhoneListCtrl">
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+</div>
+-->
+
+<!--
+<div ng-controller="InvoiceController as invoice">
+  <div>
+    <select>
+      <option ng-repeat="c in invoice.currencies">{{c}}</option>
+    </select>
+    <ul>
+    	<li ng-repeat="c in invoice.currencies">{{c}}</li>
+    </ul>
+  </div>
+</div>
+-->
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="public/scripts/apartments.js"></script>
+<!--script src="public/scripts/controller2.js"></script-->
+</html>
