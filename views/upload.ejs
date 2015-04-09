@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<HTML lang="en" ng-app="invoice2">
+	<HEAD><% include header.ejs %></HEAD>
+	<body>
+		This is where you can search for an apartment.
+		<br><br>
+
+		<div ng-controller="ApartmentCtrl as aptCtrl" ng-init="aptSelected='Brownstone'">
+			{{Object.keys(aptCtrl.apartments)}}
+			{{fields(aptCtrl.apartments)}}
+
+			<select ng-model="aptSelected">
+				<option ng-repeat="apartment in aptCtrl.apartments">{{apartment.name}}</option>
+			</select>
+
+			<br><br>
+
+			<FORM id="ApartmentSubmit">
+				<ul style="list-style: none;">
+					<li>Name: <input type="text" min="0" ng-model="submitName"></li>
+					<li>Bedrooms: <input type="number" min="0" ng-model="submitBedrooms"></li>
+					<li>Rent: <input type="number" min="0" ng-model="submitRent"></li>
+					<li>Pets:
+						<select ng-model="submitPets">
+							<option value="Allowed">Allowed</option>
+							<option value="DogsAndCats">Dogs/Cats Only</option>
+							<option value="CatsOnly">Cats Only</option>
+							<option value="NotAllowed">Not Allowed</option>
+						</select></li>
+						<br>
+						<li><button class="btn" ng-click="aptCtrl.addApartment(submitName)">Submit</button></li>
+				</ul>
+				<br><br><br>
+				{{aptCtrl.apartments}}
+				<br><br><br>
+			</FORM>
+			
+			Selected: {{aptCtrl.apartments[aptSelected].name}} <br>
+			Bedrooms: {{aptCtrl.apartments[aptSelected].bedrooms}} <br>
+			Rent: {{aptCtrl.apartments[aptSelected].rent}} <br>
+			Pets: {{aptCtrl.apartments[aptSelected].pets}} <br>
+
+			<br><br>
+			<img ng-src="public/images/{{aptCtrl.apartments[aptSelected].name.toLowerCase()}}.jpg"}}>
+		</div>
+	</body>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="public/scripts/apartments.js"></script>
+	<!--script src="public/scripts/controller2.js"></script-->
+	</html>

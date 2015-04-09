@@ -28,6 +28,10 @@ var apartmentData = {
 angular.module('invoice2', [])
 .controller('ApartmentCtrl', function() {
 	this.apartments = apartmentData;
+
+	this.addApartment = function(key, value) {
+		apartmentData[name] = name;
+	}
 });
 
 //console.dir(Object.keys(apartmentData));

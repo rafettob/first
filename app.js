@@ -25,6 +25,12 @@ app.engine('ejs', require('ejs').renderFile);
     });
   });
 
+  app.get('/upload', function(req, res) {
+    res.render('upload.ejs', {
+      title: "Rentr - Post Your Apartment."
+    });
+  });
+
   app.get('/about', function(req, res) {
     res.render('about.ejs', {
       title: "About Rentr."
