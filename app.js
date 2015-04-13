@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var config = require('./config')(process.argv[2] || 'uat');
 var session = require('express-session');
-
 //require('./router')(app);
 
 app.listen(config.port, function() {

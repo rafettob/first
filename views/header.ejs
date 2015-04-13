@@ -1,12 +1,13 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+	<title><%= title %></title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<div style="color:#0000FF">
-	<TITLE><%= title %></TITLE>
+	<!--div style="color:#0000FF"-->
 	<!--style type="text/css">
 	#menu ul {
 		list-style: none;
@@ -16,18 +17,35 @@
 	#menu li {
 		display: inline;
 	}
-	</style-->
-	<div id="menu">
-		<nav>
-			<a href="/">Index</a>
-			<a href="/find">Find</a>
-			<a href="/upload">Upload</a>
-			<a href="/about">About</a>
-			<a href="/signup">Signup</a>
+</style--><body>
+<div class="container">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+					<!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						Benjamin
+					</button-->
+					<a class="navbar-brand" href="/">Rentr</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="/find">Find</a></li>
+						<li><a href="/upload">Upload</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/signup">Signup</a></li>
+						<li><a href="/login">Login</a></li>
+					</ul>
+				</div>
+			</div>
 		</nav>
+
+		<div class="jumbotron">
+			<h2>Rentr - Delivering Quality and Trust to Your Apartment Hunt</h2>
+		</div>
 	</div>
-	<H1>Rentr - Delivering Quality and Trust to Your Apartment Hunt</H1>
-</div>
+</body>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
