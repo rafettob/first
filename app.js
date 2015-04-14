@@ -29,7 +29,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
-
+  
 })
 
 app.get('/find', function(req, res) {
@@ -52,7 +52,13 @@ app.get('/about', function(req, res) {
 
 app.get('/signup', function(req, res) {
   res.render('signup.ejs', {
-    title: "The index2 page."
+    title: "Signup for rentr."
+  });
+});
+
+app.get('/login', function(req, res) {
+  res.render('login.ejs', {
+    title: "Login to rentr."
   });
 });
 
