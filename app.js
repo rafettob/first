@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var config = require('./config')(process.argv[2] || 'uat');
 var session = require('express-session');
 //require('./router')(app);
@@ -12,6 +13,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('ejs', require('ejs').renderFile);
 
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   secret: process.env.EXPRESS_SECRET || '$#%!@#@@#SSDASAGDJDVV@@@@',
   key: 'sid'
@@ -28,8 +31,9 @@ app.get('/', function(req, res) {
   });
 });
 
-app.post('/login', function(req, res) {
-  
+app.post('/action/Login', function(req, res) {
+  console.dir(req.body);
+  res.end("Received post");
 })
 
 app.get('/find', function(req, res) {
