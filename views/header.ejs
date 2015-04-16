@@ -35,7 +35,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/signup">Signup</a></li>
-						<li><a href="/login">Login</a></li>
+						<li><button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginModal">Login</button></li>
 					</ul>
 				</div>
 			</div>
@@ -46,6 +46,8 @@
 		</div>
 	</div>
 </body>
+
+<% include signin-prompt.ejs %>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

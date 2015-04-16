@@ -3,6 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var config = require('./config')(process.argv[2] || 'uat');
 var session = require('express-session');
+
+//var userData = {};// = require('./user-data')
 //require('./router')(app);
 
 app.listen(config.port, function() {
@@ -27,13 +29,16 @@ app.use(function(req, res, next) {
 
 app.get('/', function(req, res) {
   res.render('index.ejs', {
-    title: "Rentr."
+    title: "Rentr.",
+    userData: req.session.userData || {}
   });
 });
 
 app.post('/action/Login', function(req, res) {
-  console.dir(req.body);
-  res.end("Received post");
+  req.session.userData = {};
+  req.session.userData.email = req.body.email;
+  console.dir(req.session);
+  res.redirect('/');
 })
 
 app.get('/find', function(req, res) {
