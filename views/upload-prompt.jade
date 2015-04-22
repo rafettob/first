@@ -1,0 +1,33 @@
+div.container
+  form#uploadApartment(action='/action/Upload', method='POST', enctype="multipart/form-data")
+    // onsubmit='return validateForm()')
+    div.form-group
+      label(for='address') Address
+      input#address.form-control(name='address', type='text' required='')
+    div.form-group
+      label(for='rent') Rent
+      input#rent.form-control(name='rent', type='number' required='')
+    div.form-group
+      label(for='pets') Pet Policy
+      select#pets.form-control(name='petPolicy' required='')
+        option(value='NotAllowed') No Pets
+        option(value='CatsOnly') Cats Ok
+        option(value='DogsAndCats') Dogs and Cats Only
+        option(value='Allowed') Pets Allowed
+    //
+      div.form-group
+        label(for='availableFrom') Available Starting
+        input#availableFrom.form-control(name='availableFrom', type='date' required='')
+      div.form-group
+        label(for='availableTo') Available Until
+        input#availableTo.form-control(name='availableTo', type='date' required='')
+    div.form-group
+      label(for='pictures') Upload a picture
+      input#pictures.form-control(name='images', type='file', accept='image/*', multiple)
+    div.form-group
+      button.btn.btn-default(type='submit') Submit
+//
+  script.
+    function validateForm() {
+      return false;
+    }

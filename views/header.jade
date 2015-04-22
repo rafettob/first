@@ -1,0 +1,43 @@
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+  link(href='css/bootstrap.min.css', rel='stylesheet')
+title
+// div style="color:#0000FF"
+//
+  style type="text/css">
+  #menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  #menu li {
+  display: inline;
+  }
+  </style 
+
+body
+  .container
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            | Menu
+          a.navbar-brand(href='/') Rentr
+        #navbar.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/find') Find
+            li
+              a(href='/upload') Upload
+            li
+              a(href='/about') About
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/signup') Signup
+            li
+              button.btn.btn-default.navbar-btn(type='button', data-toggle='modal', data-target='#loginModal') Login
+    .jumbotron
+      h2 Rentr - Delivering Quality and Trust to Your Apartment Hunt

@@ -1,0 +1,35 @@
+doctype html
+html(lang='en', ng-app='invoice2')
+  body
+    include header.jade
+    .container
+      div This is where you can search for an apartment.
+      br
+      div(ng-controller='ApartmentCtrl as aptCtrl', ng-init="aptSelected='Brownstone'")
+        form#ApartmentSubmit
+          ul(style='list-style: none;')
+            li
+              | Name: 
+              input(type='text', min='0', ng-model='submitName')
+            li
+              | Bedrooms: 
+              input(type='number', min='0', ng-model='submitBedrooms')
+            li
+              | Rent: 
+              input(type='number', min='0', ng-model='submitRent')
+            li
+              | Pets:
+              select(ng-model='submitPets')
+                option(value='Allowed') Allowed
+                option(value='DogsAndCats') Dogs/Cats Only
+                option(value='CatsOnly') Cats Only
+                option(value='NotAllowed') Not Allowed
+            br
+            li
+              button.btn(ng-click='aptCtrl.addApartment(submitName)') Submit
+          br
+          br
+          p {{aptCtrl.apartments}}
+
+  script(src='bower_components/angular/angular.js')
+  script(src='public/scripts/apartments.js')

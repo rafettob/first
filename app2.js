@@ -9,8 +9,8 @@ app.listen(config.port, function() {
 });
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'jade');
+//app.engine('ejs', require('ejs').renderFile);
 
 //app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,11 +18,6 @@ app.use(session({
   secret: process.env.EXPRESS_SECRET || '$#%!@#@@#SSDASAGDJDVV@@@@',
   key: 'sid'
 }));
-
-// app.use(function(req, res, next) {
-//   //console.dir(req.session);
-//   next();
-// });
 
 app.get('/', function(req, res) {
   res.render('index.ejs', {
@@ -38,6 +33,14 @@ app.post('/action/Login', function(req, res) {
   res.redirect('/');
 })
 
+app.post('/action/Upload', function(req, res, next) {
+  console.log('got here');
+  console.dir(req.body);
+  console.log('benjamin is here');
+  console.dir(req.files);
+  res.redirect('/');
+})
+
 app.get('/find', function(req, res) {
   res.render('find.ejs', {
     title: "Rentr - Find Your Apartment."
@@ -45,7 +48,7 @@ app.get('/find', function(req, res) {
 });
 
 app.get('/upload', function(req, res) {
-  res.render('upload.ejs', {
+  res.render('upload2.jade', {
     title: "Rentr - Post Your Apartment."
   });
 });

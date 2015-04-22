@@ -1,4 +1,7 @@
 var environment = {
+	local: {
+		port: process.env.PORT || 3000
+	},
 	uat: {
 		port: process.env.PORT || 3000
 	},
